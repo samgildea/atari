@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> p l a y e m l i k e a t a r i </title>
+	<style type="text/css">
+
+		body {
+			background-color: black;
+		}
+		.bg-video {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100vw;
+		  height: 100vh;
+		  overflow: hidden;
+		  z-index: -1;
+		}
+
+		.bg-video #player {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100vw;
+		  height: 100vh;
+		  z-index: -2;
+		}
+
+		.bg-video .overlay {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100vw;
+		  height: 100vh;
+		  z-index: 1;
+		}
+
+
+		.atari img {
+			width: 500px;
+			animation: slide 8s linear infinite;
+		}
+
+		.atari {
+			animation: slide 8s linear infinite;
+		}
+
+		.atari2 img {
+			width: 500px;
+			animation: slidetwo 8s linear infinite;
+		}
+
+		.atari2 {
+			animation: slidetwo 8s linear infinite;
+		}
+
+
+
+		@keyframes slide {
+		 0%{
+		    transform: translate3d(500px, 0, 0);
+		  }
+		  100%{
+		    transform: translate3d(-500px, 0, 0);
+		  }}
+
+		  @keyframes slidetwo {
+		 0%{
+		    transform: translate3d(-500px, 0, 0);
+		  }
+		  100%{
+		    transform: translate3d(500px, 0, 0);
+		  }}
+	</style>
+</head>
+<body>
+	<main role="main" align="center">
+
+		<script type="text/javascript">
+			// Loads the YouTube IFrame API JavaScript code.
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			// Inserts YouTube JS code into the page.
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			var player;
+
+			// onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
+			function onYouTubeIframeAPIReady() {
+			  player = new YT.Player('player', {
+			    videoId: 'BjFQRwLj_FQ', // the ID of the video (mentioned above)
+			    playerVars: {
+			      autoplay: 1, // start automatically
+			      controls: 0, // don't show the controls (we can't click them anyways)
+			      modestbranding: 1, // show smaller logo
+			      loop: 1, // loop when complete
+			      playlist: 'BjFQRwLj_FQ' // required for looping, matches the video ID
+			    }
+			  });
+			}		
+		</script>
+
+		<div class="gif" align="center">
+
+			<img style="width: 1000px;" src="58466.gif" />
+		</div>
+
+
+		<div class="bg-video">
+  			<div class="overlay"></div>
+  			<div id="player"></div>
+		</div>
+
+		<div class="atari">
+
+		<img src="move.png" alt="">
+		<div class="atari2">
+			
+			<img src="ecco.png">
+
+		</div>
+
+		</div>
+
+		
+	</main>
+
+
+</body>
+</html>
