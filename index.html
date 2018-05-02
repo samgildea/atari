@@ -1,187 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> p l a y e m l i k e a t a r i </title>
-	<style type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 
-		body {
-			background-color: black;
-		}
-		.bg-video {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100vw;
-		  height: 100vh;
-		  overflow: hidden;
-		  z-index: -1;
-		}
-
-		.bg-video #player {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100vw;
-		  height: 100vh;
-		  z-index: -2;
-		}
-
-		.bg-video .overlay {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100vw;
-		  height: 100vh;
-		  z-index: 1;
-		}
-
-
-		.atari img {
-			width: 500px;
-			animation: slide 8s linear infinite;
-		}
-
-		.atari {
-			animation: slide 8s linear infinite;
-		}
-
-		.atari2 img {
-			width: 500px;
-			animation: slidetwo 8s linear infinite;
-		}
-
-		.atari2 {
-			animation: slidetwo 8s linear infinite;
-		}
-		
-		.gif {
-			position: fixed;
-			width: 1000px;
-		}
-
-
-
-		@keyframes slide {
-		 0%{
-		    transform: translate3d(500px, 0, 0);
-		  }
-		  100%{
-		    transform: translate3d(-500px, 0, 0);
-		  }}
-
-		  @keyframes slidetwo {
-		 0%{
-		    transform: translate3d(-500px, 0, 0);
-		  }
-		  100%{
-		    transform: translate3d(500px, 0, 0);
-		  }}
-	</style>
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+	<title>I GAVE MYSELF UP TO THE REDLIGHT</title>
 </head>
 <body>
-	<!-- Hotjar Tracking Code for playemlikeatari.party -->
+
+	<style>
+
+	.bladee img {
+		width: 500px;
+
+	}
+
+	img {
+	}
+
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+
+  }
+
+
+
+
+
+.car-right {
+  position: absolute;
+  top: 86%;
+  left: -200px;
+  z-index: 10;
+    
+  animation-duration: 10s;
+  animation-name: goRight;
+  animation-iteration-count: infinite;
+    
+  -moz-animation-duration: 10s;
+  -moz-animation-name: goRight;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes goRight {
+  from {
+    -webkit-transform: translate(0,0);
+  }
+
+  to {
+    -webkit-transform: translate(1920px,0);
+  }
+}
+
+@-moz-keyframes goRight {
+  from {
+    -moz-transform: translate(0,0);
+  }
+
+  to {
+    -moz-transform: translate(1920px,0);
+  }
+}
+
+  .bg-video #player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+  }
+
+  .bg-video .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+
+
+
+  h1 {
+    color: red;
+font-family: 'Gugi', cursive;
+
+    text-align: center;
+    font-size: 64px;
+    text-shadow: 1px 1px 3px black;
+  }
+
+
+</style>
+
+
+<div class="bg-video">
+  <div class="overlay"></div>
+  <div id="player"></div>
+</div>
 <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:779613,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	var b = function($b,speed){
+    beeWidth = $b.width();
+    
+    $b.animate({
+        "left": "50%"
+    }, speed);
+};
+
+$(function(){
+    b($("#b"), 5000);
+});
+
+
 </script>
-	<main role="main" align="center">
 
-		<script type="text/javascript">
-			// Loads the YouTube IFrame API JavaScript code.
-			var tag = document.createElement('script');
-			tag.src = "https://www.youtube.com/iframe_api";
-			// Inserts YouTube JS code into the page.
-			var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 11, 2018").getTime();
 
-			var player;
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-			// onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
-			function onYouTubeIframeAPIReady() {
-			  player = new YT.Player('player', {
-			    videoId: 'BjFQRwLj_FQ', // the ID of the video (mentioned above)
-			    playerVars: {
-			      autoplay: 1, // start automatically
-			      controls: 0, // don't show the controls (we can't click them anyways)
-			      modestbranding: 1, // show smaller logo
-			      loop: 1, // loop when complete
-			      playlist: 'BjFQRwLj_FQ' // required for looping, matches the video ID
-			    }
-			  });
-			}		
-		</script>
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<div class="gif" align="center">
-			<br>
-			<br>
-			<br>
-			<a href="https://www.youtube.com/watch?v=BjFQRwLj_FQ"><img style="width: 100%;" src="58466.gif" /></a>
-			<br>
-			<br>
-		</div>
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: '-tpPZ5gKJ7g',
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        modestbranding: 1,
+        loop: 1,
+        playlist: 'kNizPk7xBbs'
+      }
+    });
+  }
+</script>
+<div align="center">
+<img style="width: 150px;" src="https://pbs.twimg.com/media/Db99RELWAAYbtTY.jpg" />
+</div>
+<div class="countdown">
 
-		<div class="bg-video">
-  			<div class="overlay"></div>
-  			<div id="player"></div>
-		</div>
+<h1 id="demo"></h1>
 
-		<div class="atari">
-			
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+</div>
 
-		<img src="2k.png" alt="">
-		<div class="atari2">
-			
-			<a href="https://www.youtube.com/watch?v=BjFQRwLj_FQ"><img src="ecco.png"></a>
-
-		</div>
-
-		</div>
-		<div class="atari">
-
-		<img src="move.png" alt=""><br>
-		<div class="atari2">
-			
-			<a href="https://www.youtube.com/watch?v=BjFQRwLj_FQ"><img style="width: 200px;" src="moreecco.png"></a>
-
-		</div>
-
-		</div>
-		<div class="moreImages">
-			
-			
-		</div>
-
-		
-	</main>
+<div class="whitearmor" align="center">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dress up for you I feel like a college boy <a href="https://twitter.com/hashtag/redlight?src=hash&amp;ref_src=twsrc%5Etfw">#redlight</a> may 11</p>&mdash; dg whitearmor (@whitearmor1) <a href="https://twitter.com/whitearmor1/status/990518382087860224?ref_src=twsrc%5Etfw">April 29, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 
 </body>
